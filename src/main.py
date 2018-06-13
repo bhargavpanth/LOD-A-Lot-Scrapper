@@ -1,8 +1,10 @@
 from bs4 import BeautifulSoup
 import urllib
-from time import sleep
+import time
 from fake_useragent import UserAgent
 from random import randint
+import sys
+
 # https://hdt.lod.labs.vu.nl/triple?page=1&page_size=100&g=%3Chttps%3A//hdt.lod.labs.vu.nl/graph/BAG%3E
 
 class ScrapeLODAaLot():
@@ -67,13 +69,11 @@ class ScrapeLODAaLot():
 				print (tds[0].text, tds[1].text, tds[2].text)
 		
 		# for tr in soup.find_all('tr')[2:]:
-		
-
 
 
 
 def main():
-	test = ScrapeLODAaLot(1,2).scrape()
+	test = ScrapeLODAaLot(sys.argv[1], sys.argv[2]).scrape()
 
 
 if __name__ == '__main__':
