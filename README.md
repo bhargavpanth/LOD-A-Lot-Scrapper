@@ -12,3 +12,5 @@
 * ```https://hdt.lod.labs.vu.nl/triple?page=1&page_size=100&g=%3Chttps%3A//hdt.lod.labs.vu.nl/graph/BAG%3E```
 
 ### How does it run?
+
+```python src/main.py```
