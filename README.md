@@ -2,7 +2,7 @@
 
 ### Status
 
-* ```1 - 57407``` indexes on 11 June 2018
+* ```1 - 50000``` indexes on 13 June 2018
 
 ### What does this do?
 
@@ -13,4 +13,6 @@
 
 ### How does it run?
 
-```python src/main.py```
+14 June - ```python src/main.py 5546 50000 >> data/lod-a-lot.dump.txt```
+
+```python src/main.py start end```
