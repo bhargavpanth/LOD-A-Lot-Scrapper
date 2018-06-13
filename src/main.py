@@ -2,7 +2,7 @@ from bs4 import BeautifulSoup
 import urllib
 from time import sleep
 from fake_useragent import UserAgent
-
+from random import randint
 # https://hdt.lod.labs.vu.nl/triple?page=1&page_size=100&g=%3Chttps%3A//hdt.lod.labs.vu.nl/graph/BAG%3E
 
 class ScrapeLODAaLot():
@@ -38,6 +38,7 @@ class ScrapeLODAaLot():
 
 
 	def request_for_page(self, url):
+		time.sleep(randint(1, 6))
 		return urllib.urlopen(url).read()
 		# user_agent = UserAgent()
 		# print user_agent.random
