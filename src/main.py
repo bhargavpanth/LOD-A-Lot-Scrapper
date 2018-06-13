@@ -1,5 +1,5 @@
 from bs4 import BeautifulSoup
-import urllib2
+import urllib
 from time import sleep
 from fake_useragent import UserAgent
 
@@ -32,23 +32,26 @@ class ScrapeLODAaLot():
 		for x in xrange(int(self.start), int(self.end)):
 			_url = head + str(x) + tail
 			html_content = self.request_for_page(_url)
-			# print html_content
+			print html_content
 			self.get_tuples(html_content)
 		# print 'URL lsit exhausted - index crossed'
 
 
 	def request_for_page(self, url):
-		user_agent = UserAgent()
-		try:
-			req = urllib2.Request(url)
-			req.add_header(user_agent.random)
-			response = urllib.urlopen(url)
-		except Exception as e:
-			pass
-		else:
-			return response.read()
-		finally:
-			pass
+		return urllib.urlopen(url).read()
+		# user_agent = UserAgent()
+		# print user_agent.random
+		# print url
+		# try:
+		# 	# req = urllib2.Request(url)
+		# 	# req.add_header(user_agent.random)
+		# 	response = urllib.urlopen(url)
+		# except Exception as e:
+		# 	pass
+		# else:
+		# 	return response.read()
+		# finally:
+		# 	pass
 
 
 	def get_tuples(self, content):
